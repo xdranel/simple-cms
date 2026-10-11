@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
+use App\Models\User;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -57,7 +58,11 @@ class UserForm
                     ->default('author')
                     ->validationMessages([
                         'required' => 'The role is required.',
-                    ]),
+                    ])
+                    ->disabled(fn(?User $record): bool => $record !== null &&
+                        $record->id !== auth()->id()
+                    )
+                    ->dehydrated(),
 
                 Textarea::make('bio')
                     ->rows(4)

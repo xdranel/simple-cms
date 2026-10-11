@@ -56,7 +56,6 @@ class CategoriesTable
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
