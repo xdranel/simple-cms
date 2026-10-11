@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        FilamentIcon::register([
+            'panels::sidebar.collapse-button' => 'heroicon-o-bars-3',
+            'panels::sidebar.expand-button' => 'heroicon-o-bars-3-center-left',
+        ]);
     }
 }
