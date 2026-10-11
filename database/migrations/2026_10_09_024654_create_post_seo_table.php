@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->foreignId('post_id')->unique()->constrained('posts')->cascadeOnDelete();
             $table->string('meta_title')->nullable();
-            $table->string('meta_description')->nullable();
+            $table->text('meta_description')->nullable();
             $table->string('og_image')->nullable();
             $table->string('canonical_url', 2048)->nullable();
 
