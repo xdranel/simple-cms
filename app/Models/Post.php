@@ -2,15 +2,21 @@
 
 namespace App\Models;
 
+use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Notifications\Notifiable;
 
 #[Fillable(['user_id', 'category_id', 'title', 'slug', 'excerpt', 'content', 'featured_image', 'status', 'is_featured','published_at'])]
 class Post extends Model
 {
+    /** @use HasFactory<UserFactory> */
+    use HasFactory, Notifiable;
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');

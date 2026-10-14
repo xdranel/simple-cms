@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('post_seo', function (Blueprint $table) {
+        Schema::create('post_seos', function (Blueprint $table) {
             $table->id();
 
             $table->foreignId('post_id')->unique()->constrained('posts')->cascadeOnDelete();
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('post_seo');
+        Schema::dropIfExists('post_seos');
     }
 };

@@ -65,11 +65,9 @@ class UsersTable
             ])
             ->recordActions([
                 ActionGroup::make([
-                    ViewAction::make(),
                     EditAction::make(),
                     DeleteAction::make(),
                 ])->label('Actions')
-                    ->icon('heroicon-m-ellipsis-vertical')
                     ->size(Size::Small)
                     ->color('secondary')
                     ->button(),

@@ -20,11 +20,12 @@ class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-//    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedSquaresPlus;
+    protected static string|BackedEnum|null $activeNavigationIcon = Heroicon::SquaresPlus;
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static string|null|\UnitEnum $navigationGroup = 'Management';
+    protected static string|null|\UnitEnum $navigationGroup = 'Admin';
 
     public static function form(Schema $schema): Schema
     {

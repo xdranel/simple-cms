@@ -33,11 +33,6 @@ class TagsTable
                     ->counts('posts')
                     ->label('Total Posts')
                     ->sortable(),
-
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
@@ -48,7 +43,6 @@ class TagsTable
                     EditAction::make(),
                     DeleteAction::make(),
                 ])->label('Actions')
-                    ->icon('heroicon-m-ellipsis-vertical')
                     ->size(Size::Small)
                     ->color('secondary')
                     ->button(),
@@ -56,7 +50,7 @@ class TagsTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
-                ]),
+                ])->label('Actions')
             ]);
     }
 }

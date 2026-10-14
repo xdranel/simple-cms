@@ -34,11 +34,6 @@ class CategoriesTable
                     ->counts('posts')
                     ->label('Total Posts')
                     ->sortable(),
-
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
@@ -49,14 +44,11 @@ class CategoriesTable
                     EditAction::make(),
                     DeleteAction::make(),
                 ])->label('Actions')
-                    ->icon('heroicon-m-ellipsis-vertical')
                     ->size(Size::Small)
                     ->color('secondary')
                     ->button(),
             ])
             ->toolbarActions([
-                BulkActionGroup::make([
-                ]),
             ]);
     }
 }

@@ -17,4 +17,9 @@ class EditTag extends EditRecord
             //
         ];
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return self::getResource()::getUrl('index');
+    }
 }

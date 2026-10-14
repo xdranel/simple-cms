@@ -20,11 +20,12 @@ class TagResource extends Resource
 {
     protected static ?string $model = Tag::class;
 
-//    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedTag;
+    protected static string|BackedEnum|null $activeNavigationIcon = Heroicon::Tag;
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static string|null|\UnitEnum $navigationGroup = 'Management';
+    protected static string|null|\UnitEnum $navigationGroup = 'Admin';
 
     public static function form(Schema $schema): Schema
     {

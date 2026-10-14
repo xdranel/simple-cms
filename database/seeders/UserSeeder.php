@@ -18,7 +18,31 @@ class UserSeeder extends Seeder
         User::factory()->role(UserRole::Admin)->create([
             'name' => 'Administrator',
             'email' => 'admin@email.com',
-            'password' => bcrypt('password'),
+            'password' => 'password',
         ]);
+
+        $authors = [
+            [
+                'name' => 'Andi Pratama',
+                'email' => 'andi@email.com',
+            ],
+            [
+                'name' => 'Siti Rahma',
+                'email' => 'siti@email.com',
+            ],
+            [
+                'name' => 'Budi Santoso',
+                'email' => 'budi@email.com',
+            ],
+        ];
+
+        foreach ($authors as $author) {
+            User::factory()
+                ->role(UserRole::Author)
+                ->create([
+                    ...$author,
+                    'password' => 'password',
+                ]);
+        }
     }
 }

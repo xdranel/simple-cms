@@ -36,4 +36,9 @@ class EditUser extends EditRecord
 
         return $data;
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return self::getResource()::getUrl('index');
+    }
 }

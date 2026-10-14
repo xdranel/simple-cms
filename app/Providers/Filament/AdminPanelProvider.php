@@ -41,7 +41,9 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 NavigationGroup::make()
-                    ->label('Management')
+                    ->label('Admin'),
+                NavigationGroup::make()
+                    ->label('General')
             ])
             ->discoverResources(
                 in: app_path('Filament/Resources'),
