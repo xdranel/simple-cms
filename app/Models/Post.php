@@ -17,6 +17,11 @@ class Post extends Model
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');

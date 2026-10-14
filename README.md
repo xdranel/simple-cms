@@ -83,6 +83,7 @@ and then
 ```bash
 php artisan key:generate
 php artisan migrate:fresh --seed
+php artisan storage:link
 ```
 ---
 
@@ -92,7 +93,15 @@ composer run dev
 ```  
 ---
 
-6. **Access Application**
+6. **Access Application**  
+user  
+```bash
+http://localhost:8000/
+or
+http://127.0.0.1:8000/
+```  
+
+admin/author
 ```bash
 http://localhost:8000/admin
 or
@@ -101,7 +110,7 @@ http://127.0.0.1:8000/admin
 ---  
 
 ### Existing Account for Testing
-you can check on Database/Seeders/DatabaseSeeder.php
+you can check on Database/Seeders/UserSeeder.php
 - Admin:  
   admin@email.com / password  
 
